@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-
 @FeignClient("CLIENT1")
 interface Client1Feign {
 	@GetMapping("/client1")
@@ -50,7 +49,6 @@ public class SpringcloudmicroserviceClient2Application {
 	@GetMapping("/feign")
 	public String feign() {
 		LOG.info("client2-feign-call=================================================");
-		
 		return client1Feign.getName();
 	}
 
